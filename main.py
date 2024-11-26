@@ -38,6 +38,9 @@ class SpeedTest24Hrs:
                 ]
             )
             f_object.close()
+        with open(f"results/{self.result['timestamp']}.txt", "w") as txt_file:
+            txt_file.write(f"{self.result}\n")
+            txt_file.close()
 
     def generate_graph(self):
         timestamps = [result["timestamp"] for result in self.result]
